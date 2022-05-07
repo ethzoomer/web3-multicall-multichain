@@ -1,17 +1,17 @@
 {
-  "name": "@dopex-io/web3-multicall",
+  "name": "@dopex-io/web3-multicall-multichain",
   "version": "0.1.7",
-  "description": "A library to do multiple calls via a single eth_call using web3.",
+  "description": "Fork of dopex's web3 multicall",
   "main": "dist/index.js",
   "source": "src/index.ts",
   "author": {
-    "name": "witherblock",
-    "email": "wb@dopex.io",
-    "url": "https://github.com/witherblock"
+    "name": "Code forked from witherblock/dopex",
+    "email": "ethz00@gmail.com",
+    "url": "https://github.com/ethzoomer"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dopex-io/web3-multicall"
+    "url": "https://github.com/ethzoomer/web3-multicall-multichain"
   },
   "license": "MIT",
   "private": false,
