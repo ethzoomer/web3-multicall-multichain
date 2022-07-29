@@ -5,6 +5,7 @@ import { provider } from 'web3-core';
 
 import { CHAIN_ID_TO_MULTICALL_ADDRESS } from './constants';
 import mulitcallAbi from './abi/Multicall.json';
+const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 
 interface ConstructorArgs {
   chainId?: number;
@@ -17,7 +18,7 @@ export default class Multicall {
   multicall: Contract;
 
   constructor({ chainId, provider, multicallAddress }: ConstructorArgs) {
-    this.web3 = new Web3(provider);
+    this.web3 = provider;
 
     const _multicallAddress = multicallAddress
       ? multicallAddress

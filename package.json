@@ -1,6 +1,6 @@
 {
-  "name": "web3-multicall-multichain-fork",
-  "version": "0.2.0",
+  "name": "web3-multicall-multichain-fork-2",
+  "version": "0.2.1",
   "description": "Fork of dopex's web3 multicall",
   "main": "dist/index.js",
   "source": "src/index.ts",
@@ -26,6 +26,7 @@
     "typescript": "^4.4.3"
   },
   "dependencies": {
+    "@alch/alchemy-web3": "^1.4.6",
     "web3": "^1.6.0"
   },
   "prettier": {
