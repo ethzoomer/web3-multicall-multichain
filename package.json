@@ -1,6 +1,6 @@
 {
   "name": "web3-multicall-multichain-fork-2",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Fork of dopex's web3 multicall",
   "main": "dist/index.js",
   "source": "src/index.ts",
