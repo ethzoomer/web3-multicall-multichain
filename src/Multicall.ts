@@ -11,14 +11,16 @@ interface ConstructorArgs {
   chainId?: number;
   provider: provider;
   multicallAddress?: string;
+  alchkey: string;
 }
 
 export default class Multicall {
   web3: Web3;
   multicall: Contract;
 
-  constructor({ chainId, provider, multicallAddress }: ConstructorArgs) {
-    this.web3 = provider;
+  constructor({ chainId, provider, multicallAddress, alchkey }: ConstructorArgs) {
+    let alchemyKey = 'https://opt-mainnet.g.alchemy.com/v2/' + alchkey
+    const web3instance = createAlchemyWeb3(alchkey, { writeProvider: provider });
 
     const _multicallAddress = multicallAddress
       ? multicallAddress
@@ -32,7 +34,7 @@ export default class Multicall {
       );
     }
 
-    this.multicall = new this.web3.eth.Contract(
+    this.multicall = new web3instance.eth.Contract(
       mulitcallAbi as AbiItem[],
       _multicallAddress
     );
@@ -56,7 +58,7 @@ export default class Multicall {
         o.internalType !== o.type && o.internalType !== undefined ? o : o.type
       );
 
-      let result = this.web3.eth.abi.decodeParameters(types, hex);
+      let result = web3instance.eth.abi.decodeParameters(types, hex);
 
       delete result.__length__;
 
