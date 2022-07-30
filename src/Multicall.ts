@@ -22,7 +22,7 @@ export default class Multicall {
   constructor({ chainId, provider, multicallAddress, alchkey }: ConstructorArgs) {
     this.web3 = new Web3(provider);
     let alchemyKey = 'https://opt-mainnet.g.alchemy.com/v2/' + alchkey;
-    this.web3instance = createAlchemyWeb3(alchkey, { writeProvider: provider });
+    this.web3instance = createAlchemyWeb3(alchemyKey, { writeProvider: provider });
 
     const _multicallAddress = multicallAddress
       ? multicallAddress
