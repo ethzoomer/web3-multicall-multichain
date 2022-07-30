@@ -23,7 +23,6 @@ export default class Multicall {
     this.web3 = new Web3(provider);
     let alchemyKey = 'https://opt-mainnet.g.alchemy.com/v2/' + alchkey;
     this.web3instance = createAlchemyWeb3(alchemyKey, { writeProvider: provider });
-    console.log(this.web3instance.eth.getBalance("0xD34f3e85bB7C8020C7959B80a4B87a369D639dc0"))
 
     const _multicallAddress = multicallAddress
       ? multicallAddress
